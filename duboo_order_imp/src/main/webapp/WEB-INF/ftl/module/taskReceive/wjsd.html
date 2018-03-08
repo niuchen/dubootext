@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我接收的</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-table.css" />
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="css/tzgg.css"/>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="title-name">我接收的</div>
+			<!--搜索开始-->
+			<div class="seach clearfix">
+				<button class="layui-btn seach-screening">筛选</button>
+				<button class="layui-btn seach-btn">搜索</button>
+				<input type="text" placeholder="搜索任务名称" autocomplete="off" class="layui-input seach-inp">
+			<!--高级搜索开始-->
+				<div class="filter-select hide2 clearfix">
+					<div class="filter-wrap left">
+						<form class="layui-form clearfix" action="">
+							<div class="layui-form-item select-item">
+								<label class="layui-form-label">派发人</label>
+								<div class="layui-input-block">
+									<input type="text" placeholder="请选择..."  class="layui-input">
+								</div>
+							</div>
+							<div class="layui-form-item select-item">
+								<label class="layui-form-label">子任务状态</label>
+								<div class="layui-input-block">
+									<select name="city" lay-verify="required">
+										<option value="">请选择...</option>
+										<option value="0">全部</option>
+										<option value="1">进行中</option>
+										<option value="2">已完成</option>
+										<option value="3">已取消</option>
+										<option value="4">已超时</option>
+									</select>
+								</div>
+							</div>
+							<div class="layui-form-item select-item">
+								<label class="layui-form-label">任务名称</label>
+								<div class="layui-input-block">
+									<select name="city" lay-verify="required">
+										<option value="">请选择...</option>
+										<option value="0"></option>
+									</select>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="select-wrap right"><button class="layui-btn">查询</button></div>
+				</div>
+				<!--高级搜索结束-->
+			</div>
+			<!--搜索结束-->
+
+			<!--选项卡开始-->
+			<div class="layui-tab">
+				<ul class="layui-tab-title">
+					<li class="layui-this">我负责的</li>
+					<li>我参与的</li>
+				</ul>
+				<div class="layui-tab-content">
+					<div class="layui-tab-item layui-show ">
+						<table data-toggle="table">
+							<thead>
+								<tr>
+									<th>序号</th>
+									<th>任务名称</th>
+									<th>派发人</th>
+									<th>执行人</th>
+									<th>执行状态</th>
+									<th>执行速度</th>
+									<th>开始时间</th>
+									<th>截止时间</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>01</td>
+									<td><span class="task-name">拜访中国移动</span></td>
+									<td>张三</td>
+									<td>张三,李四</td>
+									<td>进行中</td>
+									<td>0/1</td>
+									<td>2016-12-01 16:45:12</td>
+									<td>2016-12-01 16:45:12</td>
+									<td><span class="completed">确认完成</span></td>
+								</tr>
+								<tr>
+									<td>01</td>
+									<td><span class="task-name">拜访中国移动</span></td>
+									<td>张三</td>
+									<td>张三,李四</td>
+									<td>进行中</td>
+									<td>0/1</td>
+									<td>2016-12-01 16:45:12</td>
+									<td>2016-12-01 16:45:12</td>
+									<td><span class="completed">确认完成</span></td>
+								</tr>
+								<tr>
+									<td>01</td>
+									<td><span class="task-name">拜访中国移动</span></td>
+									<td>张三</td>
+									<td>张三,李四</td>
+									<td>进行中</td>
+									<td>0/1</td>
+									<td>2016-12-01 16:45:12</td>
+									<td>2016-12-01 16:45:12</td>
+									<td><span class="completed">确认完成</span></td>
+								</tr>
+								<tr>
+									<td>01</td>
+									<td><span class="task-name">拜访中国移动</span></td>
+									<td>张三</td>
+									<td>张三,李四</td>
+									<td>进行中</td>
+									<td>0/1</td>
+									<td>2016-12-01 16:45:12</td>
+									<td>2016-12-01 16:45:12</td>
+									<td><span class="completed">确认完成</span></td>
+								</tr>
+								<tr>
+									<td>01</td>
+									<td><span class="task-name">拜访中国移动</span></td>
+									<td>张三</td>
+									<td>张三,李四</td>
+									<td>进行中</td>
+									<td>0/1</td>
+									<td>2016-12-01 16:45:12</td>
+									<td>2016-12-01 16:45:12</td>
+									<td><span class="completed">确认完成</span></td>
+								</tr>
+								<tr>
+									<td>01</td>
+									<td><span class="task-name">拜访中国移动</span></td>
+									<td>张三</td>
+									<td>张三,李四</td>
+									<td>进行中</td>
+									<td>0/1</td>
+									<td>2016-12-01 16:45:12</td>
+									<td>2016-12-01 16:45:12</td>
+									<td><span class="completed">确认完成</span></td>
+								</tr>
+								<tr>
+									<td>01</td>
+									<td><span class="task-name">拜访中国移动</span></td>
+									<td>张三</td>
+									<td>张三,李四</td>
+									<td>进行中</td>
+									<td>0/1</td>
+									<td>2016-12-01 16:45:12</td>
+									<td>2016-12-01 16:45:12</td>
+									<td><span class="completed">确认完成</span></td>
+								</tr>
+								<tr>
+									<td>01</td>
+									<td><span class="task-name">拜访中国移动</span></td>
+									<td>张三</td>
+									<td>张三,李四</td>
+									<td>进行中</td>
+									<td>0/1</td>
+									<td>2016-12-01 16:45:12</td>
+									<td>2016-12-01 16:45:12</td>
+									<td><span class="completed">确认完成</span></td>
+								</tr>
+								<tr>
+									<td>01</td>
+									<td><span class="task-name">拜访中国移动</span></td>
+									<td>张三</td>
+									<td>张三,李四</td>
+									<td>进行中</td>
+									<td>0/1</td>
+									<td>2016-12-01 16:45:12</td>
+									<td>2016-12-01 16:45:12</td>
+									<td><span class="completed">确认完成</span></td>
+								</tr>
+								<tr>
+									<td>01</td>
+									<td><span class="task-name">拜访中国移动</span></td>
+									<td>张三</td>
+									<td>张三,李四</td>
+									<td>进行中</td>
+									<td>0/1</td>
+									<td>2016-12-01 16:45:12</td>
+									<td>2016-12-01 16:45:12</td>
+									<td><span class="completed">确认完成</span></td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="page-wrapper clearfix">
+							<div class="page-info">显示<span>1</span>到<span>10</span>项，共<span>66</span>项</div>
+							<div id="page1" class="page"></div>
+						</div>
+					</div>
+					<div class="layui-tab-item">
+						<table data-toggle="table">
+							<thead>
+								<tr>
+									<th>序号</th>
+									<th>任务名称</th>
+									<th>派发人</th>
+									<th>执行人</th>
+									<th>执行状态</th>
+									<th>执行速度</th>
+									<th>开始时间</th>
+									<th>截止时间</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>02</td>
+									<td><span class="task-name">拜访中国移动</span></td>
+									<td>张三</td>
+									<td>张三,李四</td>
+									<td>进行中</td>
+									<td>0/1</td>
+									<td>2016-12-01 16:45:12</td>
+									<td>2016-12-01 16:45:12</td>
+								</tr>
+								<tr>
+									<td>01</td>
+									<td><span class="task-name">拜访中国移动</span></td>
+									<td>张三</td>
+									<td>张三,李四</td>
+									<td>进行中</td>
+									<td>0/1</td>
+									<td>2016-12-01 16:45:12</td>
+									<td>2016-12-01 16:45:12</td>
+								</tr>
+								<tr>
+									<td>01</td>
+									<td><span class="task-name">拜访中国移动</span></td>
+									<td>张三</td>
+									<td>张三,李四</td>
+									<td>进行中</td>
+									<td>0/1</td>
+									<td>2016-12-01 16:45:12</td>
+									<td>2016-12-01 16:45:12</td>
+								</tr>
+								<tr>
+									<td>01</td>
+									<td><span class="task-name">拜访中国移动</span></td>
+									<td>张三</td>
+									<td>张三,李四</td>
+									<td>进行中</td>
+									<td>1/1</td>
+									<td>2016-12-01 16:45:12</td>
+									<td>2016-12-01 16:45:12</td>
+								</tr>
+								<tr>
+									<td>01</td>
+									<td><span class="task-name">拜访中国移动</span></td>
+									<td>张三</td>
+									<td>张三,李四</td>
+									<td>进行中</td>
+									<td>1/1</td>
+									<td>2016-12-01 16:45:12</td>
+									<td>2016-12-01 16:45:12</td>
+								</tr>
+								<tr>
+									<td>02</td>
+									<td><span class="task-name">拜访中国移动</span></td>
+									<td>张三</td>
+									<td>张三,李四</td>
+									<td>进行中</td>
+									<td>0/1</td>
+									<td>2016-12-01 16:45:12</td>
+									<td>2016-12-01 16:45:12</td>
+								</tr>
+								<tr>
+									<td>01</td>
+									<td><span class="task-name">拜访中国移动</span></td>
+									<td>张三</td>
+									<td>张三,李四</td>
+									<td>进行中</td>
+									<td>0/1</td>
+									<td>2016-12-01 16:45:12</td>
+									<td>2016-12-01 16:45:12</td>
+								</tr>
+								<tr>
+									<td>01</td>
+									<td><span class="task-name">拜访中国移动</span></td>
+									<td>张三</td>
+									<td>张三,李四</td>
+									<td>进行中</td>
+									<td>0/1</td>
+									<td>2016-12-01 16:45:12</td>
+									<td>2016-12-01 16:45:12</td>
+								</tr>
+								<tr>
+									<td>02</td>
+									<td><span class="task-name">拜访中国移动</span></td>
+									<td>张三</td>
+									<td>张三,李四</td>
+									<td>进行中</td>
+									<td>0/1</td>
+									<td>2016-12-01 16:45:12</td>
+									<td>2016-12-01 16:45:12</td>
+								</tr>
+								<tr>
+									<td>02</td>
+									<td><span class="task-name">拜访中国移动</span></td>
+									<td>张三</td>
+									<td>张三,李四</td>
+									<td>进行中</td>
+									<td>0/1</td>
+									<td>2016-12-01 16:45:12</td>
+									<td>2016-12-01 16:45:12</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="page-wrapper clearfix">
+							<div class="page-info">显示<span>1</span>到<span>10</span>项，共<span>66</span>项</div>
+							<div id="page2" class="page"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--选项卡结束-->
+		</div>
+		<!--任务详情开始-->
+		<div class="task-datils hide2">
+			<div class="task-title task-title2">基本信息</div>
+			<p class="infos">派发人: <i>张三</i></p>
+			<p class="infos">创建时间: <i>2017-06-12 18:01</i></p>
+			<p class="infos">开始时间: <i>2017-06-12 18:01</i></p>
+			<p class="infos">结束时间: <i>2017-06-12 18:01</i></p>
+			<div class="task-title task-title2">任务内容</div>
+			<p class="infos">任务内容任务内容任务内容任务内容任务内容任务内容任务内容任务内容任务内容任务内容任务内容任务内容任务内容任务内容</p>
+			<div class="task-title task-title2">接收人</div>
+			<p class="infos">执行人: <i>张三</i></p>
+			<p class="infos">参与人: <i>张三,张三,张三</i></p>
+			<div class="task-title task-title2">执行记录</div>
+			<p class="infos">李四已经确认完成任务<span class="approve">审核通过</span></p>
+			<div class="task-title task-title2">附件信息</div>
+			<div class="adjunct clearfix">
+				<div class="adjunct-item"><img src="img/fujian.png" /></div>
+			</div>
+			<div class="task-title task-title2">评论</div>
+			<div class="rating clearfix">
+				<div class="avatar left"><img src="css/patterns/header-profile-skin-1.png" /></div>
+				<div class="rating-infos">
+					<div class="avatar-box">
+						<div class="avatar-name">系统管理员</div>
+						<div class="rating-time">2017-06-12 18:01</div>
+						<div class="edit">
+							<span class="delete">删除</span>
+							<span class="reply">回复</span>
+						</div>
+					</div>
+					<p class="rating-datils">评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论</p>
+				</div>
+			</div>
+			<div class="rating clearfix">
+				<div class="avatar left"><img src="css/patterns/header-profile-skin-1.png" /></div>
+				<div class="rating-infos">
+					<div class="layui-form-item layui-form-text rating-textarea">
+						<div class="layui-input-block nopading2">
+							<textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+						</div>
+					</div>
+					<p><button class="layui-btn ">确认回复</button><button class="layui-btn layui-btn-primary">取消</button></p>
+				</div>
+			</div>
+		</div>
+		<!--任务详情结束-->
+	</body>
+	<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap-table.js" type="text/javascript" charset="utf-8"></script>
+	<script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		layui.use(['element', 'form', 'layer', 'jquery', 'laypage', 'laydate'], function() {
+			var element = layui.element(),
+				form = layui.form(),
+				layer = layui.layer,
+				laypage = layui.laypage,
+				$ = layui.jquery;
+
+			laypage({
+				cont: 'page1',
+				pages: 100, //总页数
+				groups: 5 //连续显示分页数
+			});
+			laypage({
+				cont: 'page2',
+				pages: 100, //总页数
+				groups: 5 //连续显示分页数
+			});
+			//任务详情彈窗
+			$('.task-name').on('click', function() {
+				layer.open({
+					type: 1,
+					area: ['700px', '400px'],
+					title: '新增任务',
+					shade: 0.6,
+					maxmin: true,
+					anim: 5,
+					content: $('.task-datils')
+				});
+			});
+			//点击高级筛选
+			$(".seach-screening").on("click", function() {
+				$(this).siblings(".filter-select").slideToggle(300);
+			});
+
+		});
+	</script>
+
+</html>

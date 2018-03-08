@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>公告管理</title>
+        <link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+        <link rel="stylesheet" type="text/css" href="css/tzgg.css" />
+    </head>
+
+    <body>
+      
+    </body>
+    <script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        layui.use(['element', 'form', 'layer', 'jquery', 'laypage', 'upload', 'laydate'], function() {
+            var element = layui.element(),
+                form = layui.form(),
+                layer = layui.layer,
+                laypage = layui.laypage,
+                laydate = layui.laydate,
+                $ = layui.jquery;
+            //file控件
+            layui.upload({
+                title: '上传附件'
+            });
+
+            //分页1
+            laypage({
+                cont: 'page',
+                pages: 100,
+                skip: true
+            });
+             //分页2
+            laypage({
+                cont: 'page2',
+                pages: 1000,
+                skip: true
+            });
+            //内容详情彈窗1
+            $('#details1').on('click', function() {
+                layer.open({
+                    type: 1,
+                    area: ['700px', '500px'],
+                    title: '详情',
+                    shade: 0.6,
+                    maxmin: true,
+                    anim: 5,
+                    content: $('#xiangqing1')
+                });
+            });
+             //内容详情彈窗2
+            $('#details2').on('click', function() {
+                layer.open({
+                    type: 1,
+                    area: ['700px', '500px'],
+                    title: '详情',
+                    shade: 0.6,
+                    maxmin: true,
+                    anim: 5,
+                    content: $('#xiangqing2')
+                });
+            });
+            //发布新公告
+            $('#newnotice').on('click', function() {
+                layer.open({
+                    type: 1,
+                    area: ['700px', '500px'],
+                    title: '发布新公告',
+                    shade: 0.6,
+                    maxmin: true,
+                    anim: 5,
+                    content: $('#newnotice-content')
+                });
+            });
+            //附件1
+            $('#fujian1').on('click', function() {
+                layer.open({
+                    type: 1,
+                    area: ['700px', '500px'],
+                    title: '附件下载',
+                    shade: 0.6,
+                    maxmin: true,
+                    anim: 5,
+                    content: $('#fujianbox1')
+                });
+            });
+            //附件2
+            $('#fujian2').on('click', function() {
+                layer.open({
+                    type: 1,
+                    area: ['700px', '500px'],
+                    title: '附件下载',
+                    shade: 0.6,
+                    maxmin: true,
+                    anim: 5,
+                    content: $('#fujianbox2')
+                });
+            });
+            //点击高级筛选
+            $(".seach-screening").on("click", function() {
+                $(this).siblings(".filter-select").slideToggle(300);
+            });
+
+        });
+    </script>
+</html>

@@ -1,0 +1,587 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+ 
+ 	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.duboo_text</groupId>
+	<artifactId>duboo_orader_imp</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>duboo_orader_imp</name>
+	<url>http://maven.apache.org</url>
+   <repositories>
+        <repository>
+            <id>maven-central</id>
+            <name>maven-central</name>
+            <url>http://192.168.32.242:8081/repository/szwqmaven2_Hosted/</url>
+            <snapshots> 
+                <enabled>true</enabled>
+            </snapshots> 
+            <releases>
+                <enabled>true</enabled>
+            </releases>  
+        </repository>
+           <repository>
+            <id>maven-central2</id>
+            <name>maven-central2</name>
+            <url> http://192.168.32.242:8081/repository/szwqmaven2_proxy/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases> 
+        </repository>  
+    </repositories>
+      
+   
+	<properties>
+	 
+		<!-- mybatis版本号 -->
+		<mybatis.version>3.4.1</mybatis.version>
+		<!-- log4j日志文件管理包版本 -->
+ 		    <axis-version>1.7.2</axis-version>  
+ 			<log4j.version>1.2.17</log4j.version>
+			<slf4j.version>1.7.19</slf4j.version>
+			<velocity.version>1.7</velocity.version>
+			<velocity-tools.version>2.0</velocity-tools.version>
+ 		<!-- spring版本号 -->
+			<spring.version>4.2.0.RELEASE</spring.version>
+		<!-- mybatis版本号 -->
+			<mybatis.version>3.4.1</mybatis.version>
+		<!-- log4j日志文件管理包版本 -->
+ 		    <axis-version>1.7.2</axis-version>  
+ 			<log4j.version>1.2.17</log4j.version>
+			<slf4j.version>1.7.19</slf4j.version>
+			<velocity.version>1.7</velocity.version>
+			<velocity-tools.version>2.0</velocity-tools.version>
+ 
+	</properties>
+
+
+	<dependencies>
+	    <!-- 將第三方包打進私有庫  szoamaven2_Hosted
+mvn deploy:deploy-file -DgroupId=classes12 -DartifactId=classes12 -Dversion=1 -Dpackaging=jar -DrepositoryId=nexus -Dfile=E:\java\classes12.jar -Durl=http://192.168.32.242:8081/repository/szoamaven2_Hosted/ -DgeneratePom=false
+mvn deploy:deploy-file -DgroupId=szoahttpclient -DartifactId=szoahttpclient -Dversion=1 -Dpackaging=jar -DrepositoryId=nexus -Dfile=d:\szoa_http_client.jar -Durl=http://192.168.32.242:8081/repository/szoamaven2_Hosted/ -DgeneratePom=false
+       --> 
+
+		<!-- 
+		<dependency> 
+		    <groupId>szoahttpclient</groupId>  
+		    <artifactId>szoahttpclient</artifactId>
+		    <version>1.5</version>
+		</dependency>    -->
+		<dependency>
+			<groupId>com.duboo_text_api</groupId>
+  			<artifactId>duboo_text_api</artifactId>
+  			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+			<dependency>
+			<groupId>com.duboo_text_config</groupId>
+  			<artifactId>duboo_text_config</artifactId>
+  			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
+		<!-- dubbo start -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>2.5.3</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>spring</artifactId>
+					<groupId>org.springframework</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+			<version>3.3.6</version>
+			<exclusions>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+		<dependency>
+	      <groupId>com.github.sgroschupf</groupId>
+	      <artifactId>zkclient</artifactId>
+	      <version>0.1</version>
+	    </dependency>
+		<!-- dubbo end -->
+		
+		<dependency>
+			<groupId>com.dubbo</groupId>
+  			<artifactId>dubbo-api</artifactId>
+  			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+       
+        <!-- 数据库 -->
+           <dependency> 
+		    <groupId>classes12</groupId>  
+		    <artifactId>classes12</artifactId>
+		    <version>1</version>
+		</dependency>
+					<!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>c3p0</groupId>
+		    <artifactId>c3p0</artifactId>
+		    <version>0.9.1.2</version>
+		</dependency>
+				<dependency> 
+		    <groupId>org.mongodb</groupId>
+		    <artifactId>mongo-java-driver</artifactId>
+		    <version>3.2.2</version>
+		</dependency>
+		<!-- 导入Mysql数据库链接jar包 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.30</version>
+		</dependency>
+		 <!-- 数据库 -->
+		 <!-- 对象池 -->
+		      <dependency>  
+        <groupId>commons-pool</groupId>  
+        <artifactId>commons-pool</artifactId>  
+        <version>1.6</version>  
+     </dependency>  
+      <!-- 对象池 -->
+		 		<!-- Log -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<!-- Log -->
+		 
+            <dependency>  
+                <groupId>com.sun</groupId>  
+                <artifactId>tools</artifactId>  
+                <version>1.6.0</version>  
+                <scope>system</scope>  
+                <systemPath>${env.JAVA_HOME}/lib/tools.jar</systemPath>  
+            </dependency>  
+  	    <!--     java链接http协议接口-->
+	<dependency>
+	    <groupId>org.apache.httpcomponents</groupId>
+	    <artifactId>httpclient</artifactId>
+	    <version>4.5.3</version>
+	</dependency> 
+	  	    <!--     java链接http协议接口-->
+	  	    
+	  	    
+	  	    <!-- spring -->
+	  	    <!-- 故意降版本 4版本的不支持ibatis -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-orm</artifactId>
+   <!-- <version>3.2.13.RELEASE</version>-->
+        <version>${spring.version}</version>
+</dependency>
+	<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-beans</artifactId>
+    <version>${spring.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-expression</artifactId>
+    <version>${spring.version}</version>
+</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+		    <dependency>  
+    <groupId>org.springframework</groupId>  
+    <artifactId>spring-test</artifactId>  
+    <version>${spring.version}</version> 
+    </dependency>  
+    <!-- Hibernate Validator 4.0是 JSR 303 的参考实现。 不加会报错. 但是不影响项目启动和运行 -->
+       <dependency>  
+        <groupId>org.hibernate</groupId>  
+        <artifactId>hibernate-validator</artifactId>  
+        <version>5.2.4.Final</version>  
+    </dependency>  
+    
+	  	    <!-- spring end-->
+	  	    
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+    
+    	<!--json https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.6.2</version>
+		</dependency>
+		
+				<!-- 格式化对象，方便输出日志 -->
+		  <dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.1.41</version>
+		</dependency>
+				<!-- 格式化对象，方便输出日志 -->
+		
+		
+            <dependency>  
+                 <groupId>com.fasterxml.jackson.core</groupId>  
+                <artifactId>jackson-core</artifactId>  
+                <version>2.1.0</version>  
+            </dependency>  
+            <dependency>  
+                <groupId>com.fasterxml.jackson.core</groupId>  
+                <artifactId>jackson-databind</artifactId>  
+                <version>2.1.0</version>  
+            </dependency>  
+            <dependency>  
+                <groupId>com.fasterxml.jackson.core</groupId>  
+                <artifactId>jackson-annotations</artifactId>  
+                <version>2.1.0</version>  
+            </dependency>   
+            	<dependency>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20160810</version>
+		</dependency>
+		<!--json  -->
+		
+		   <dependency>  
+        <groupId>junit</groupId>  
+        <artifactId>junit</artifactId>  
+        <version>4.11</version>  
+        	<scope>test</scope>
+    </dependency>  
+   <!-- https://mvnrepository.com/artifact/net.sf.opencsv/opencsv -->
+<dependency>
+    <groupId>net.sf.opencsv</groupId>
+    <artifactId>opencsv</artifactId>
+    <version>2.3</version>
+</dependency>
+	 
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.9</version>
+		</dependency>
+    	<!-- 上传组件包 -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3.1</version>
+		</dependency> 
+		
+		<!-- 模板技术 -->
+ 	<dependency>
+		    <groupId>org.freemarker</groupId>
+		    <artifactId>freemarker</artifactId>
+		    <version>2.3.15</version>
+		</dependency>
+	 		<!-- velocity begin -->
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity-tools</artifactId>
+			<version>${velocity-tools.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>dom4j</artifactId>
+					<groupId>dom4j</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>struts-core</artifactId>
+					<groupId>org.apache.struts</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>struts-tiles</artifactId>
+					<groupId>org.apache.struts</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>struts-taglib</artifactId>
+					<groupId>org.apache.struts</groupId>
+				</exclusion>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>${velocity.version}</version>
+		</dependency>
+		<!-- velocity end -->
+		<!-- 模板技术 -->
+  	<dependency>  
+      <groupId>com.szoa_http_client</groupId>  
+      <artifactId>szoa_http_client</artifactId>  
+      <version>0.0.1-SNAPSHOT</version>  
+      <type>jar</type>  
+    </dependency>  
+    
+<!-- 		 <dependency>  -->
+<!-- 		    <groupId>sms</groupId>  -->
+<!-- 		    <artifactId>sms</artifactId> -->
+<!-- 		    <version>1</version> -->
+<!-- 		</dependency> -->
+	 
+		<!-- 以上都是私库JAR -->
+	 
+ 
+  
+		
+		 
+    
+ <!--   <dependency>  
+    <groupId>org.apache.ibatis</groupId>  
+    <artifactId>ibatis-sqlmap</artifactId>  
+    <version>2.3.4.726</version>  
+</dependency>  
+   <dependency>  
+        <groupId>org.apache.ibatis</groupId>  
+        <artifactId>ibatis-core</artifactId>  
+        <version>3.0</version>  
+    </dependency>  -->
+    		<!-- mybatis -->
+<dependency>
+    <groupId>org.mybatis</groupId>
+    <artifactId>mybatis</artifactId>
+    <version>3.4.0</version>
+</dependency>
+<dependency>
+    <groupId>org.mybatis</groupId>
+    <artifactId>mybatis-spring</artifactId>
+    <version>1.3.0</version>
+</dependency>	 
+  
+ <dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>servlet-api</artifactId>
+    <version>2.5</version>
+</dependency>
+ 
+ <!-- 自定义报表新增的 start -->
+    <dependency>
+	    <groupId>kxml2</groupId>
+	    <artifactId>kxml2</artifactId>
+	    <version>2.3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freemarker</groupId>
+      <artifactId>freemarker</artifactId>
+      <version>2.3.23</version>
+      <scope>compile</scope>
+    </dependency>
+  <!-- 自定义报表新增的 end -->
+ 
+<!-- JSTL标签类 -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+	<dependency>
+		    <groupId>javax</groupId>
+		    <artifactId>javaee-web-api</artifactId>
+		    <version>7.0</version>
+		</dependency>
+		
+
+    
+				<dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjtools</artifactId>
+    <version>1.6.10</version>
+</dependency>
+
+
+<dependency>
+    <groupId>aopalliance</groupId>
+    <artifactId>aopalliance</artifactId>
+    <version>1.0</version>
+</dependency>
+<dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjweaver</artifactId>
+    <version>1.7.3</version>
+</dependency>
+<dependency>
+    <groupId>javax.activation</groupId>
+    <artifactId>activation</artifactId>
+    <version>1.1.1</version>
+</dependency>
+ 
+ 
+ 
+
+<dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjrt</artifactId>
+    <version>1.7.3</version>
+</dependency> 
+
+     
+    
+    <dependency>  
+        <groupId>commons-collections</groupId>  
+        <artifactId>commons-collections</artifactId>  
+        <version>3.2.1</version>  
+    </dependency>  
+ 
+    
+    <!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
+<dependency>
+    <groupId>commons-beanutils</groupId>
+    <artifactId>commons-beanutils</artifactId>
+    <version>1.7.0</version>
+</dependency>
+           <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+
+
+	
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>3.9</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/net.sf.opencsv/opencsv -->
+<dependency>
+    <groupId>net.sf.opencsv</groupId>
+    <artifactId>opencsv</artifactId>
+    <version>2.3</version>
+</dependency>
+    <dependency>  
+    <groupId>org.springframework</groupId>  
+    <artifactId>spring-test</artifactId>  
+    <version>${spring.version}</version> 
+    </dependency>   
+    	<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.9</version>
+		</dependency>
+    	<!-- 上传组件包 -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3.1</version>
+		</dependency> 
+		
+		
+				<!-- 格式化对象，方便输出日志 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.1.41</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.6.2</version>
+		</dependency>
+
+	<dependency> 
+	<groupId>org.apache.poi</groupId>
+	 <artifactId>poi-ooxml</artifactId> <version>3.9</version> </dependency>
+	  
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<source>1.7</source> 
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins> 
+	</build>
+
+</project>

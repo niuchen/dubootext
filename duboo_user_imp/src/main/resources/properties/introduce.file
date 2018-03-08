@@ -1,0 +1,5 @@
+此系统是神洲乐办的 门户宣传系统 采用spring mvc  mybatis   kisso(开源单独登陆框架)  
+引入支持多模板引擎. velocity  FreeMarker两种  也支持JSP
+可以作为一个系统框架例子
+20161110开始搭建.
+实施人:牛琛

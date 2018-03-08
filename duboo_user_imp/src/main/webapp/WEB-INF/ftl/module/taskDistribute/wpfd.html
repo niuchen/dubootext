@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我派发的</title>
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="css/my.css" />
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="title-name">我派发的</div>
+			<!--搜索开始-->
+			<div class="seach seach2 clearfix">
+				<button class="layui-btn add">新增</button>
+				<button class="layui-btn seach-screening">筛选</button>
+				<button class="layui-btn seach-btn">搜索</button>
+				<input type="text" placeholder="搜索任务名称" autocomplete="off" class="layui-input seach-inp">
+				<!--高级搜索开始-->
+				<div class="filter-select hide clearfix">
+					<div class="filter-wrap left">
+						<form class="layui-form clearfix" action="">
+							<div class="layui-form-item select-item">
+								<label class="layui-form-label">任务状态</label>
+								<div class="layui-input-block">
+									<select name="city" lay-verify="required">
+										<option value=""></option>
+										<option value="0">全部</option>
+									</select>
+								</div>
+							</div>
+							<div class="layui-form-item select-item">
+								<label class="layui-form-label">执行人</label>
+								<div class="layui-input-block">
+									<input type="text"  class="layui-input">
+								</div>
+							</div>
+							<div class="layui-form-item select-item">
+								<label class="layui-form-label">执行时间</label>
+								<div class=" layui-input-block">
+									<input class="layui-input" onclick="layui.laydate({elem: this, festival: true})">
+								</div>
+							</div>
+							<div class="layui-form-item select-item">
+								<label class="layui-form-label">截止时间</label>
+								<div class=" layui-input-block">
+									<input class="layui-input" onclick="layui.laydate({elem: this, festival: true})">
+								</div>
+							</div>
+							<div class="layui-form-item select-item">
+								<label class="layui-form-label">创建时间</label>
+								<div class=" layui-input-block">
+									<input class="layui-input" onclick="layui.laydate({elem: this, festival: true})">
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="select-wrap right"><button class="layui-btn">查询</button></div>
+				</div>
+				<!--高级搜索结束-->
+			</div>
+			<!--搜索结束-->
+			<!--table开始-->
+			<table class="layui-table">
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>任务名称</th>
+						<th>执行人</th>
+						<th>执行状态</th>
+						<th>执行进度</th>
+						<th>创建时间</th>
+						<th>开始时间</th>
+						<th>截止时间</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>02</td>
+						<td><span class="task-name">拜访中国移动</span></td>
+						<td>张三</td>
+						<td>张三,李四</td>
+						<td>进行中</td>
+						<td>0/1</td>
+						<td>2016-12-01 16:45:12</td>
+						<td>2016-12-01 16:45:12</td>
+						<td><span class="check">审核</span><span class="cancel">取消</span></td>
+					</tr>
+					<tr>
+						<td>01</td>
+						<td><span class="task-name">拜访中国移动</span></td>
+						<td>张三</td>
+						<td>张三,李四</td>
+						<td>进行中</td>
+						<td>0/1</td>
+						<td>2016-12-01 16:45:12</td>
+						<td>2016-12-01 16:45:12</td>
+						<td><span class="check">审核</span><span class="cancel">取消</span></td>
+					</tr>
+					<tr>
+						<td>01</td>
+						<td><span class="task-name">拜访中国移动</span></td>
+						<td>张三</td>
+						<td>张三,李四</td>
+						<td>进行中</td>
+						<td>0/1</td>
+						<td>2016-12-01 16:45:12</td>
+						<td>2016-12-01 16:45:12</td>
+						<td><span class="check">审核</span><span class="cancel">取消</span></td>
+					</tr>
+					<tr>
+						<td>01</td>
+						<td><span class="task-name">拜访中国移动</span></td>
+						<td>张三</td>
+						<td>张三,李四</td>
+						<td>进行中</td>
+						<td>1/1</td>
+						<td>2016-12-01 16:45:12</td>
+						<td>2016-12-01 16:45:12</td>
+						<td><span class="check">审核</span><span class="cancel">取消</span></td>
+					</tr>
+					<tr>
+						<td>01</td>
+						<td><span class="task-name">拜访中国移动</span></td>
+						<td>张三</td>
+						<td>张三,李四</td>
+						<td>进行中</td>
+						<td>1/1</td>
+						<td>2016-12-01 16:45:12</td>
+						<td>2016-12-01 16:45:12</td>
+						<td><span class="check">审核</span><span class="cancel">取消</span></td>
+					</tr>
+					<tr>
+						<td>02</td>
+						<td><span class="task-name">拜访中国移动</span></td>
+						<td>张三</td>
+						<td>张三,李四</td>
+						<td>进行中</td>
+						<td>0/1</td>
+						<td>2016-12-01 16:45:12</td>
+						<td>2016-12-01 16:45:12</td>
+						<td><span class="check">审核</span><span class="cancel">取消</span></td>
+					</tr>
+					<tr>
+						<td>01</td>
+						<td><span class="task-name">拜访中国移动</span></td>
+						<td>张三</td>
+						<td>张三,李四</td>
+						<td>进行中</td>
+						<td>0/1</td>
+						<td>2016-12-01 16:45:12</td>
+						<td>2016-12-01 16:45:12</td>
+						<td><span class="check">审核</span><span class="cancel">取消</span></td>
+					</tr>
+					<tr>
+						<td>01</td>
+						<td><span class="task-name">拜访中国移动</span></td>
+						<td>张三</td>
+						<td>张三,李四</td>
+						<td>进行中</td>
+						<td>0/1</td>
+						<td>2016-12-01 16:45:12</td>
+						<td>2016-12-01 16:45:12</td>
+						<td><span class="check">审核</span><span class="cancel">取消</span></td>
+					</tr>
+					<tr>
+						<td>02</td>
+						<td><span class="task-name">拜访中国移动</span></td>
+						<td>张三</td>
+						<td>张三,李四</td>
+						<td>进行中</td>
+						<td>0/1</td>
+						<td>2016-12-01 16:45:12</td>
+						<td>2016-12-01 16:45:12</td>
+						<td><span class="check">审核</span><span class="cancel">取消</span></td>
+					</tr>
+					<tr>
+						<td>02</td>
+						<td><span class="task-name">拜访中国移动</span></td>
+						<td>张三</td>
+						<td>张三,李四</td>
+						<td>进行中</td>
+						<td>0/1</td>
+						<td>2016-12-01 16:45:12</td>
+						<td>2016-12-01 16:45:12</td>
+						<td><span class="check">审核</span><span class="cancel">取消</span></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="page-wrapper clearfix">
+				<div class="page-info">显示<span>1</span>到<span>10</span>项，共<span>66</span>项</div>
+				<div id="page" class="page"></div>
+			</div>
+			<!--table结束-->
+		</div>
+		<!--新增任务开始-->
+		<div class="add-task hide">
+			<div class="task-title3">基本信息</div>
+			<div class="layui-form task-form clearfix">
+				<div class="layui-form-item task-item">
+					<label class="layui-form-label label-l">任务名称<i>*</i></label>
+					<div class="layui-input-block nopading">
+						<input type="text" name="title" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item task-item">
+					<label class="layui-form-label label-r">派发人<i>*</i></label>
+					<div class="layui-input-block nopading">
+						<input type="text" name="title" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item task-item">
+					<label class="layui-form-label label-l">开始时间<i>*</i></label>
+					<div class=" layui-input-block nopading">
+						<input class="layui-input" placeholder="开始日" onclick="layui.laydate({elem: this, festival: true})">
+					</div>
+				</div>
+				<div class="layui-form-item task-item">
+					<label class="layui-form-label label-r">结束时间<i>*</i></label>
+					<div class=" layui-input-block nopading">
+						<input class="layui-input" placeholder="结束日" onclick="layui.laydate({elem: this, festival: true})">
+					</div>
+				</div>
+			</div>
+			<div class="task-title3">接收人</div>
+			<div class="layui-form task-form  clearfix">
+				<div class="layui-form-item task-item">
+					<label class="layui-form-label label-l">执行人<i>*</i></label>
+					<div class="layui-input-block nopading">
+						<input type="text" name="title" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item task-item">
+					<label class="layui-form-label label-r">参与人<i>*</i></label>
+					<div class="layui-input-block nopading">
+						<select name="city" lay-verify="required">
+							<option value=""></option>
+							<option value="0">北京</option>
+							<option value="1">上海</option>
+							<option value="2">广州</option>
+							<option value="3">深圳</option>
+							<option value="4">杭州</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="task-title3">任务内容</div>
+			<div class="layui-form-item layui-form-text">
+				<div class="layui-input-block nopading2">
+					<textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+				</div>
+			</div>
+			<input type="file" class="layui-upload-file">
+			<p class="btns"><button class="layui-btn ">提交</button><button class="layui-btn layui-btn-primary">取消</button></p>
+		</div>
+		<!--新增任务结束-->
+		<!--审核开始-->
+		<div class="check-dialog hide">
+			<div class="layui-tab">
+				<ul class="layui-tab-title">
+					<li class="layui-this">张三</li>
+					<li>李四</li>
+					<li>赵六</li>
+				</ul>
+				<div class="layui-tab-content">
+					<div class="layui-tab-item layui-show">
+						<div class="layui-form-item layui-form-text">
+							<div class="layui-input-block nopading2">
+								<textarea name="desc" placeholder="请输入内容" class="layui-textarea check-textarea"></textarea>
+							</div>
+						</div>
+						<p class="btns"><button class="layui-btn ">审核通过</button><button class="layui-btn layui-btn-primary">审核不通过</button></p>
+					</div>
+					<div class="layui-tab-item">
+						<div class="layui-form-item layui-form-text">
+							<div class="layui-input-block nopading2">
+								<textarea name="desc" placeholder="请输入内容" class="layui-textarea check-textarea"></textarea>
+							</div>
+						</div>
+						<p class="btns"><button class="layui-btn ">审核通过</button><button class="layui-btn layui-btn-primary">审核不通过</button></p>
+					</div>
+					<div class="layui-tab-item">
+						<div class="layui-form-item layui-form-text">
+							<div class="layui-input-block nopading2">
+								<textarea name="desc" placeholder="请输入内容" class="layui-textarea check-textarea"></textarea>
+							</div>
+						</div>
+						<p class="btns"><button class="layui-btn ">审核通过</button><button class="layui-btn layui-btn-primary">审核不通过</button></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--审核结束-->
+	</body>
+	<script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		layui.use(['element', 'form', 'layer', 'jquery', 'laypage', 'upload', 'laydate'], function() {
+			var element = layui.element(),
+				form = layui.form(),
+				layer = layui.layer,
+				laypage = layui.laypage,
+				laydate = layui.laydate,
+				$ = layui.jquery;
+			//file控件
+			layui.upload({
+				title: '上传附件'
+			});
+
+			//分页
+			laypage({
+				cont: 'page',
+				pages: 100,
+				skip: true
+			});
+			//新增部门彈窗
+			$('.add').on('click', function() {
+				layer.open({
+					type: 1,
+					area: ['700px', '400px'],
+					title: '新增任务',
+					shade: 0.6,
+					maxmin: true,
+					anim: 5,
+					content: $('.add-task')
+				});
+			});
+			//审核
+			$('.check').on('click', function() {
+				layer.open({
+					type: 1,
+					area: ['700px'],
+					title: '审核',
+					shade: 0.6,
+					maxmin: true,
+					anim: 5,
+					content: $('.check-dialog')
+				});
+			});
+			//点击高级筛选
+			$(".seach-screening").on("click", function() {
+				$(this).siblings(".filter-select").slideToggle(300);
+			});
+
+		});
+	</script>
+
+</html>
